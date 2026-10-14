@@ -22,3 +22,14 @@ jobs:
 
       - name: Run tests
         run: python -m pytest -v
+
+      - name: Upload application artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: application-files
+          path: |
+            app_final.py
+            test_app.py
+            requirements.txt
+            requirements-dev.txt
+            .env.example
